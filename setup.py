@@ -12,7 +12,7 @@ setup(
     author='Mr.Roxanne',
     url='https://github.com/nixest-Inc/translation',
     version='0.0.1',
-    packages=['translation-wrapper'],
+    packages=['discord/ext/translation'],
     install_requires=REQUIREMENTS,
     description='System translate bot discord.py',
     long_description=README_RST,

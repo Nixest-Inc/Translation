@@ -1,21 +1,12 @@
-import re
 from setuptools import setup
 
-with open('requirements.txt') as f:
-    REQUIREMENTS = f.readlines()
-
-with open('README.rst', encoding='utf-8') as f:
-    README_RST = f.read()
-
 setup(
-    name='translation-wrapper',
+    name='harumi-translate',
     author='Mr.Roxanne',
-    url='https://github.com/nixest-Inc/translation',
+    url='https://github.com/WhyNoHarumi',
     version='0.0.1',
     packages=['discord/ext/translation'],
-    install_requires=REQUIREMENTS,
-    description='System translate bot discord.py',
-    long_description=README_RST,
+    description='System to translate Harumi commands.',
     license='MIT License',
     keywords=['translate','eng','pt-br'],
     classifiers=[

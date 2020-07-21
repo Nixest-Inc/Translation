@@ -1,3 +1,4 @@
+  
 import re
 from json import load as to_json
 from os import listdir
@@ -5,7 +6,7 @@ from .translator import translator
 
 
 class files:
-    def __init__(self, source, path='./json/lang/', file_extension='json'):
+    def __init__(self, source, path='./json/translate/', file_extension='json'):
         self.source = source
         self.path = path
         self.file_ext_len = len(file_extension) + 1

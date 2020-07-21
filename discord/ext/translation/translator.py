@@ -1,6 +1,6 @@
 class translator:
-    def __init__(self, i18n, locale):
-        self.i18n = i18n
+    def __init__(self, language, locale):
+        self.language = language
 
         if hasattr(locale, 'locale'):
             self.locale = locale.locale
@@ -11,14 +11,14 @@ class translator:
         keys = path.split('.')
 
         try:
-            string = self.i18n.strings[self.locale]
+            string = self.language.strings[self.locale]
             for key in keys:
                 string = string[key]
         except KeyError:
-            if self.locale == self.i18n.source:
+            if self.locale == self.language.source:
                 return
             try:
-                string = self.i18n.strings[self.i18n.source]
+                string = self.language.strings[self.language.source]
                 for key in keys:
                     string = string[key]
             except KeyError:

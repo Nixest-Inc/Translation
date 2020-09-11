@@ -5,7 +5,7 @@ from os import listdir
 from .translator import translator
 
 
-class files:
+class Files:
     def __init__(self, source, path='./json/translate/', file_extension='json'):
         self.source = source
         self.path = path

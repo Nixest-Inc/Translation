@@ -1,4 +1,4 @@
-class translator:
+class Translator:
     def __init__(self, language, locale):
         self.language = language
 

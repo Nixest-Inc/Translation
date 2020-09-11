@@ -1,8 +1,7 @@
-  
 import re
 from json import load as to_json
 from os import listdir
-from .translator import translator
+from .translator import Translator
 
 
 class Files:
@@ -12,7 +11,7 @@ class Files:
         self.file_ext_len = len(file_extension) + 1
         self.strings = {}
 
-    def load_translations(self, locale, path=None):
+    async def load_translations(self, locale, path=None):
         if path is None:
             path = self.path + locale + '/'
 
@@ -24,13 +23,13 @@ class Files:
 
         self.strings[locale] = strings
 
-    def load_languages(self, path=None, pattern='^[a-z]{2}((_|-)[A-Z]{2})?$'):
+    async def load_languages(self, path=None, pattern='^[a-z]{2}((_|-)[A-Z]{2})?$'):
         if path is None:
             path = self.path
 
         pattern = re.compile(pattern)
         for locale in [locale for locale in listdir(path) if pattern.match(locale)]:
-            self.load_translations(locale, path + locale + '/')
+           await self.load_translations(locale, path + locale + '/')
 
-    def get(self, locale):
-        return translator(self, locale).lang
+    async def get(self, locale):
+        return Translator(self, locale).lang

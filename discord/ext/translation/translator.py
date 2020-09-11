@@ -8,7 +8,7 @@ class Translator:
             self.locale = locale
 
     def lang(self, path, values={}):
-        keys = path.split('.')
+        keys = path.split('|')
 
         try:
             string = self.language.strings[self.locale]

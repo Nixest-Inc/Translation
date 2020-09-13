@@ -3,7 +3,6 @@ from json import load as to_json
 from os import listdir
 from .translator import Translator
 
-
 class Files:
     def __init__(self, source, path='./json/translate/', file_extension='json'):
         self.source = source
@@ -32,4 +31,5 @@ class Files:
            await self.load_translations(locale, path + locale + '/')
 
     async def get(self, locale):
-        return Translator(self, locale).lang
+        translation = Translator(self, locale)
+        return translation.lang

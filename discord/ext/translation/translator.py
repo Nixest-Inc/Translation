@@ -1,3 +1,4 @@
+
 class Translator:
     def __init__(self, language, locale):
         self.language = language
@@ -7,7 +8,7 @@ class Translator:
         else:
             self.locale = locale
 
-    def lang(self, path, values={}):
+    async def lang(self, path, values={}):
         keys = path.split('|')
 
         try:
